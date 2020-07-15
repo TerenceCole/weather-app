@@ -14,7 +14,8 @@ body {
 
 /* Begin Animation Test  */
 .crossfade > figure {
-  animation: imageAnimation 15s linear infinite 5s;
+  /* Disabling this until I can fix the cover background issue */
+  /* animation: imageAnimation 15s linear infinite 5s; */
   backface-visibility: hidden;
   background-size: cover;
   background-position: cover;

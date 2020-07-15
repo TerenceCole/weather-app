@@ -12,6 +12,57 @@ body {
   background-position: cover;
 }
 
+/* Begin Animation Test  */
+.crossfade > figure {
+  animation: imageAnimation 15s linear infinite 5s;
+  backface-visibility: hidden;
+  background-size: cover;
+  background-position: cover;
+  color: transparent;
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: -100;
+}
+
+.crossfade > figure:nth-child(1) { background-image: url('images/blue_clouds.jpg'); }
+
+.crossfade > figure:nth-child(2) {
+  animation-delay: 10s;
+  background-image: url('images/pink_clouds.jpg');
+}
+
+.crossfade > figure:nth-child(3) {
+  animation-delay: 15s;
+  background-image: url('images/green_clouds.jpg');
+}
+
+
+@keyframes 
+imageAnimation {
+  0% {
+ animation-timing-function: ease-in;
+ opacity: 0;
+}
+ 8% {
+ animation-timing-function: ease-out;
+ opacity: 1;
+}
+ 17% {
+ opacity: 1
+}
+ 25% {
+ opacity: 1
+}
+ 100% {
+ opacity: 0
+}
+}
+/* End Animation Test */
+
 .app-wrap {
   display: flex;
   flex-direction: column;
@@ -68,6 +119,10 @@ main {
   color: #fff;
   font-size: 1rem;
   text-shadow: 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.weather-icon-box {
+ /* I may change this to be side-by-side later */
 }
 
 .current .temp {

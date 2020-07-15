@@ -8,7 +8,8 @@ const defaultSearch = 'St. Louis';
 const searchbox = document.querySelector('.search-box');
 searchbox.addEventListener('keypress', setQuery);
 
-
+//Skycons Test
+// const icon = new Skycons({"color": 'pink'});
 
 function setQuery(event) {
   if (event.keyCode === 13) {
@@ -24,7 +25,7 @@ function getResults (query) {
 }
 
 function displayResults(weather) {
-  console.log(weather);
+  // console.log(weather);
   let city = document.querySelector('.location .city');
   city.innerText = `${weather.name}, ${weather.sys.country}`;
   
@@ -37,7 +38,14 @@ function displayResults(weather) {
 
   let weather_element = document.querySelector('.current .weather');
   weather_element.innerText = weather.weather[0].main;
-  
+
+  // Openweather Icons
+  document.getElementById("weather-icon").src= `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
+
+  // Skycons Test
+  // icon.add('icon', Skycons.PARTLY_CLOUDY_DAY);
+  // icon.play();
+
   let hilow = document.querySelector('.hi-low');
   hilow.innerText = `${Math.round(weather.main.temp_min)}°F / ${Math.round(weather.main.temp_max)}°F `;
 
